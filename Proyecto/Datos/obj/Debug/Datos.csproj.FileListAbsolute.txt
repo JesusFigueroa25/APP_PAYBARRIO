@@ -1,0 +1,36 @@
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\Datos.dll
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\Datos.pdb
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.dll
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.pdb
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.dll
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.pdb
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\bin\Debug\Datos.dll.config
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\bin\Debug\Datos.dll
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\bin\Debug\Datos.pdb
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.dll
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.xml
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\ESCRITORIO\Documentos\tf finanzas\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.csproj.Up2Date
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\Datos.dll.config
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.dll
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.xml
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hp\OneDrive - Universidad Peruana de Ciencias\UNIVERSIDAD\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.csproj.Up2Date
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\Datos.dll.config
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\Datos.dll
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\Datos.pdb
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.dll
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.xml
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.csproj.Up2Date
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.dll
+C:\Users\hp\Videos\Universidad\2024-I\FINANZAS E INGENIERÍA ECONÓMICA\TF\TF_Finanzas_Grupo5\Datos\obj\Debug\Datos.pdb

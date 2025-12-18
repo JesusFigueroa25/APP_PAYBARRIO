@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TF_Finanzas_Ingenieria_Economica_Grupo5ModelStoreContainer" CdmEntityContainer="BDEFEntities">
+    <EntitySetMapping Name="AnualidadCronogramaPagos">
+      <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.AnualidadCronogramaPagos">
+        <MappingFragment StoreEntitySet="AnualidadCronogramaPagos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Credito_ID" ColumnName="Credito_ID" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="Cuota" ColumnName="Cuota" />
+          <ScalarProperty Name="EstadoPago" ColumnName="EstadoPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NombresCompletos" ColumnName="NombresCompletos" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="DiaPagoConfigurable" ColumnName="DiaPagoConfigurable" />
+          <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+          <ScalarProperty Name="EstadoCliente" ColumnName="EstadoCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Creditos">
+      <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Creditos">
+        <MappingFragment StoreEntitySet="Creditos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Tienda_ID" ColumnName="Tienda_ID" />
+          <ScalarProperty Name="TipoCredito" ColumnName="TipoCredito" />
+          <ScalarProperty Name="MontoCredito" ColumnName="MontoCredito" />
+          <ScalarProperty Name="Plazo" ColumnName="Plazo" />
+          <ScalarProperty Name="TEA" ColumnName="TEA" />
+          <ScalarProperty Name="TasaMora" ColumnName="TasaMora" />
+          <ScalarProperty Name="FechaCompra" ColumnName="FechaCompra" />
+          <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+          <ScalarProperty Name="PagoFinal" ColumnName="PagoFinal" />
+          <ScalarProperty Name="Interes" ColumnName="Interes" />
+          <ScalarProperty Name="TipoGracia" ColumnName="TipoGracia" />
+          <ScalarProperty Name="DiasGracia" ColumnName="DiasGracia" />
+          <ScalarProperty Name="EstadoPago" ColumnName="EstadoPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditoValorFuturo">
+      <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.CreditoValorFuturo">
+        <MappingFragment StoreEntitySet="CreditoValorFuturo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Credito_ID" ColumnName="Credito_ID" />
+          <ScalarProperty Name="ValorFuturo" ColumnName="ValorFuturo" />
+          <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+          <ScalarProperty Name="EstadoPago" ColumnName="EstadoPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tienda">
+      <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Tienda">
+        <MappingFragment StoreEntitySet="Tienda">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiendaCliente">
+      <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.TiendaCliente">
+        <MappingFragment StoreEntitySet="TiendaCliente">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+          <ScalarProperty Name="Tienda_ID" ColumnName="Tienda_ID" />
+          <ScalarProperty Name="NombresCliente" ColumnName="NombresCliente" />
+          <ScalarProperty Name="EstadoCliente" ColumnName="EstadoCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
