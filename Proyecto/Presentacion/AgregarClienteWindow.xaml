@@ -1,0 +1,54 @@
+﻿<Window x:Class="Presentacion.AgregarClienteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentacion"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+WindowStyle="None"
+ResizeMode="NoResize"
+        Title="AgregarClienteWindow" Height="768" Width="1366">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/AgregarCliente1.png"/>
+        </Grid.Background>
+        <Button x:Name="btnRegistrarCliente" Content="Registrar" HorizontalAlignment="Left" Margin="184,439,0,0" VerticalAlignment="Top" Height="66" Width="256" FontSize="28" FontFamily="Arial Black" Foreground="#FF099A62" Background="#FFDDFF0C" Click="btnRegistrarCliente_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
+        <TextBox x:Name="tbNombres" HorizontalAlignment="Left" Margin="86,190,0,0" TextWrapping="Wrap" Text="Nombres Completos" VerticalAlignment="Top" Width="386" Height="46" FontSize="28"/>
+        <TextBox x:Name="tbDireccion" HorizontalAlignment="Left" Margin="86,265,0,0" TextWrapping="Wrap" Text="Dirección actual" VerticalAlignment="Top" Width="386" Height="40" FontSize="28"/>
+        <TextBox x:Name="tbCorreoElectronico" HorizontalAlignment="Left" Margin="86,340,0,0" TextWrapping="Wrap" Text="Correo electronico" VerticalAlignment="Top" Width="386" Height="44" FontSize="28"/>
+        <TextBox x:Name="tbDNI" HorizontalAlignment="Left" Margin="935,265,0,0" TextWrapping="Wrap" Text="DNI" VerticalAlignment="Top" Width="388" Height="40" FontSize="28"/>
+        <TextBox x:Name="tbTelefono" HorizontalAlignment="Left" Margin="935,190,0,0" TextWrapping="Wrap" Text="Telefono" VerticalAlignment="Top" Width="388" RenderTransformOrigin="0.588,-3.06" Height="46" FontSize="28"/>
+        <DataGrid x:Name="dgClientes" Margin="534,424,190,85" RenderTransformOrigin="0.5,0.5" Background="White" SelectionChanged="dgClientes_SelectionChanged"  />
+        <Button x:Name="btnRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="372,27,0,0" VerticalAlignment="Top" Height="72" Width="281" Background="White" Foreground="#FF099A62" FontSize="28" FontFamily="Arial Black" Click="btnRegresar_Click_1" >
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="184,524,0,0" VerticalAlignment="Top" Height="64" Width="256" FontSize="28" FontFamily="Arial Black" Foreground="#FF099A62" Background="#FFDDFF0C" Click="btnEliminar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="btnMenu" Content="Menu" HorizontalAlignment="Left" Margin="900,27,0,0" VerticalAlignment="Top" Height="72" Width="229"   Background="White" Foreground="#FF099A62" FontSize="30" FontFamily="Arial Black" RenderTransformOrigin="1.474,0.424" Click="btnMenu_Click"  >
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="Estado Cliente" HorizontalAlignment="Left" Margin="935,339,0,0" VerticalAlignment="Top" FontSize="25" Background="White" Width="167"/>
+        <ComboBox x:Name="cbEstadoCliente" HorizontalAlignment="Left" Margin="1117,342,0,0" VerticalAlignment="Top" Width="206" RenderTransformOrigin="-0.043,-1.091" FontSize="30" Height="40">
+            <ComboBoxItem Content="Activo"/>
+            <ComboBoxItem Content="Inactivo"/>
+        </ComboBox>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="184,606,0,0" VerticalAlignment="Top" Height="64" Width="256" FontSize="28" FontFamily="Arial Black" Foreground="#FF099A62" Background="#FFDDFF0C" Click="btnModificar_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
+
+    </Grid>
+</Window>
