@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cffc0bf7dfe1427e8246771d73ea55f7" Name="Diagram1">
+        <EntityTypeShape EntityType="TF_Finanzas_Ingenieria_Economica_Grupo5Model.AnualidadCronogramaPagos" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Cliente" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Creditos" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TF_Finanzas_Ingenieria_Economica_Grupo5Model.CreditoValorFuturo" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Tienda" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TF_Finanzas_Ingenieria_Economica_Grupo5Model.TiendaCliente" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="TF_Finanzas_Ingenieria_Economica_Grupo5Model.AnualidadCronogramaPagos_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="TF_Finanzas_Ingenieria_Economica_Grupo5Model.AnualidadCronogramaPagos_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Credito_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Tienda_Cliente_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Credito_Tienda" ManuallyRouted="false" />
+        <AssociationConnector Association="TF_Finanzas_Ingenieria_Economica_Grupo5Model.ValorFuturo_Credito" ManuallyRouted="false" />
+        <AssociationConnector Association="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Tienda_Cliente_Tienda" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

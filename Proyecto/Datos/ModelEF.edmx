@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AnualidadCronogramaPagos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cliente_ID" Type="int" Nullable="false" />
+          <Property Name="Credito_ID" Type="int" Nullable="false" />
+          <Property Name="Periodo" Type="int" Nullable="false" />
+          <Property Name="Cuota" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="EstadoPago" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DNI" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="NombresCompletos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Saldo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="DiaPagoConfigurable" Type="int" Nullable="false" />
+          <Property Name="Contrasenia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EstadoCliente" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Creditos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cliente_ID" Type="int" Nullable="false" />
+          <Property Name="Tienda_ID" Type="int" Nullable="false" />
+          <Property Name="TipoCredito" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MontoCredito" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Plazo" Type="int" Nullable="false" />
+          <Property Name="TEA" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="TasaMora" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="FechaCompra" Type="date" Nullable="false" />
+          <Property Name="FechaPago" Type="date" />
+          <Property Name="PagoFinal" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Interes" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TipoGracia" Type="varchar" MaxLength="50" />
+          <Property Name="DiasGracia" Type="int" Nullable="false" />
+          <Property Name="EstadoPago" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CreditoValorFuturo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Credito_ID" Type="int" Nullable="false" />
+          <Property Name="ValorFuturo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="FechaPago" Type="date" />
+          <Property Name="EstadoPago" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tienda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RUC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contrasenia" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiendaCliente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cliente_ID" Type="int" Nullable="false" />
+          <Property Name="Tienda_ID" Type="int" Nullable="false" />
+          <Property Name="NombresCliente" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EstadoCliente" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="AnualidadCronogramaPagos_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="AnualidadCronogramaPagos" Type="Self.AnualidadCronogramaPagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AnualidadCronogramaPagos">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AnualidadCronogramaPagos_Credito">
+          <End Role="Creditos" Type="Self.Creditos" Multiplicity="1" />
+          <End Role="AnualidadCronogramaPagos" Type="Self.AnualidadCronogramaPagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Creditos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AnualidadCronogramaPagos">
+              <PropertyRef Name="Credito_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Credito_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Creditos" Type="Self.Creditos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Creditos">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Credito_Tienda">
+          <End Role="Tienda" Type="Self.Tienda" Multiplicity="1" />
+          <End Role="Creditos" Type="Self.Creditos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tienda">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Creditos">
+              <PropertyRef Name="Tienda_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tienda_Cliente_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="TiendaCliente" Type="Self.TiendaCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TiendaCliente">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tienda_Cliente_Tienda">
+          <End Role="Tienda" Type="Self.Tienda" Multiplicity="1" />
+          <End Role="TiendaCliente" Type="Self.TiendaCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tienda">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TiendaCliente">
+              <PropertyRef Name="Tienda_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ValorFuturo_Credito">
+          <End Role="Creditos" Type="Self.Creditos" Multiplicity="1" />
+          <End Role="CreditoValorFuturo" Type="Self.CreditoValorFuturo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Creditos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CreditoValorFuturo">
+              <PropertyRef Name="Credito_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TF_Finanzas_Ingenieria_Economica_Grupo5ModelStoreContainer">
+          <EntitySet Name="AnualidadCronogramaPagos" EntityType="Self.AnualidadCronogramaPagos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Creditos" EntityType="Self.Creditos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CreditoValorFuturo" EntityType="Self.CreditoValorFuturo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tienda" EntityType="Self.Tienda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiendaCliente" EntityType="Self.TiendaCliente" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="AnualidadCronogramaPagos_Cliente" Association="Self.AnualidadCronogramaPagos_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="AnualidadCronogramaPagos" EntitySet="AnualidadCronogramaPagos" />
+          </AssociationSet>
+          <AssociationSet Name="AnualidadCronogramaPagos_Credito" Association="Self.AnualidadCronogramaPagos_Credito">
+            <End Role="Creditos" EntitySet="Creditos" />
+            <End Role="AnualidadCronogramaPagos" EntitySet="AnualidadCronogramaPagos" />
+          </AssociationSet>
+          <AssociationSet Name="Credito_Cliente" Association="Self.Credito_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Creditos" EntitySet="Creditos" />
+          </AssociationSet>
+          <AssociationSet Name="Credito_Tienda" Association="Self.Credito_Tienda">
+            <End Role="Tienda" EntitySet="Tienda" />
+            <End Role="Creditos" EntitySet="Creditos" />
+          </AssociationSet>
+          <AssociationSet Name="Tienda_Cliente_Cliente" Association="Self.Tienda_Cliente_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="TiendaCliente" EntitySet="TiendaCliente" />
+          </AssociationSet>
+          <AssociationSet Name="Tienda_Cliente_Tienda" Association="Self.Tienda_Cliente_Tienda">
+            <End Role="Tienda" EntitySet="Tienda" />
+            <End Role="TiendaCliente" EntitySet="TiendaCliente" />
+          </AssociationSet>
+          <AssociationSet Name="ValorFuturo_Credito" Association="Self.ValorFuturo_Credito">
+            <End Role="Creditos" EntitySet="Creditos" />
+            <End Role="CreditoValorFuturo" EntitySet="CreditoValorFuturo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TF_Finanzas_Ingenieria_Economica_Grupo5Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AnualidadCronogramaPagos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cliente_ID" Type="Int32" Nullable="false" />
+          <Property Name="Credito_ID" Type="Int32" Nullable="false" />
+          <Property Name="Periodo" Type="Int32" Nullable="false" />
+          <Property Name="Cuota" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="EstadoPago" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.AnualidadCronogramaPagos_Cliente" FromRole="AnualidadCronogramaPagos" ToRole="Cliente" />
+          <NavigationProperty Name="Creditos" Relationship="Self.AnualidadCronogramaPagos_Credito" FromRole="AnualidadCronogramaPagos" ToRole="Creditos" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DNI" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NombresCompletos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Saldo" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="DiaPagoConfigurable" Type="Int32" Nullable="false" />
+          <Property Name="Contrasenia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EstadoCliente" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="AnualidadCronogramaPagos" Relationship="Self.AnualidadCronogramaPagos_Cliente" FromRole="Cliente" ToRole="AnualidadCronogramaPagos" />
+          <NavigationProperty Name="Creditos" Relationship="Self.Credito_Cliente" FromRole="Cliente" ToRole="Creditos" />
+          <NavigationProperty Name="TiendaCliente" Relationship="Self.Tienda_Cliente_Cliente" FromRole="Cliente" ToRole="TiendaCliente" />
+        </EntityType>
+        <EntityType Name="Creditos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cliente_ID" Type="Int32" Nullable="false" />
+          <Property Name="Tienda_ID" Type="Int32" Nullable="false" />
+          <Property Name="TipoCredito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MontoCredito" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Plazo" Type="Int32" Nullable="false" />
+          <Property Name="TEA" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="TasaMora" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="FechaCompra" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaPago" Type="DateTime" Precision="0" />
+          <Property Name="PagoFinal" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Interes" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="TipoGracia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DiasGracia" Type="Int32" Nullable="false" />
+          <Property Name="EstadoPago" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="AnualidadCronogramaPagos" Relationship="Self.AnualidadCronogramaPagos_Credito" FromRole="Creditos" ToRole="AnualidadCronogramaPagos" />
+          <NavigationProperty Name="Cliente" Relationship="Self.Credito_Cliente" FromRole="Creditos" ToRole="Cliente" />
+          <NavigationProperty Name="Tienda" Relationship="Self.Credito_Tienda" FromRole="Creditos" ToRole="Tienda" />
+          <NavigationProperty Name="CreditoValorFuturo" Relationship="Self.ValorFuturo_Credito" FromRole="Creditos" ToRole="CreditoValorFuturo" />
+        </EntityType>
+        <EntityType Name="CreditoValorFuturo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Credito_ID" Type="Int32" Nullable="false" />
+          <Property Name="ValorFuturo" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="FechaPago" Type="DateTime" Precision="0" />
+          <Property Name="EstadoPago" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Creditos" Relationship="Self.ValorFuturo_Credito" FromRole="CreditoValorFuturo" ToRole="Creditos" />
+        </EntityType>
+        <EntityType Name="Tienda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RUC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contrasenia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Creditos" Relationship="Self.Credito_Tienda" FromRole="Tienda" ToRole="Creditos" />
+          <NavigationProperty Name="TiendaCliente" Relationship="Self.Tienda_Cliente_Tienda" FromRole="Tienda" ToRole="TiendaCliente" />
+        </EntityType>
+        <EntityType Name="TiendaCliente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cliente_ID" Type="Int32" Nullable="false" />
+          <Property Name="Tienda_ID" Type="Int32" Nullable="false" />
+          <Property Name="NombresCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EstadoCliente" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.Tienda_Cliente_Cliente" FromRole="TiendaCliente" ToRole="Cliente" />
+          <NavigationProperty Name="Tienda" Relationship="Self.Tienda_Cliente_Tienda" FromRole="TiendaCliente" ToRole="Tienda" />
+        </EntityType>
+        <Association Name="AnualidadCronogramaPagos_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="AnualidadCronogramaPagos" Type="Self.AnualidadCronogramaPagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AnualidadCronogramaPagos">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AnualidadCronogramaPagos_Credito">
+          <End Role="Creditos" Type="Self.Creditos" Multiplicity="1" />
+          <End Role="AnualidadCronogramaPagos" Type="Self.AnualidadCronogramaPagos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Creditos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AnualidadCronogramaPagos">
+              <PropertyRef Name="Credito_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Credito_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Creditos" Type="Self.Creditos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Creditos">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tienda_Cliente_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="TiendaCliente" Type="Self.TiendaCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TiendaCliente">
+              <PropertyRef Name="Cliente_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Credito_Tienda">
+          <End Role="Tienda" Type="Self.Tienda" Multiplicity="1" />
+          <End Role="Creditos" Type="Self.Creditos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tienda">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Creditos">
+              <PropertyRef Name="Tienda_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ValorFuturo_Credito">
+          <End Role="Creditos" Type="Self.Creditos" Multiplicity="1" />
+          <End Role="CreditoValorFuturo" Type="Self.CreditoValorFuturo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Creditos">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CreditoValorFuturo">
+              <PropertyRef Name="Credito_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Tienda_Cliente_Tienda">
+          <End Role="Tienda" Type="Self.Tienda" Multiplicity="1" />
+          <End Role="TiendaCliente" Type="Self.TiendaCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tienda">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TiendaCliente">
+              <PropertyRef Name="Tienda_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BDEFEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AnualidadCronogramaPagos" EntityType="Self.AnualidadCronogramaPagos" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="Creditos" EntityType="Self.Creditos" />
+          <EntitySet Name="CreditoValorFuturo" EntityType="Self.CreditoValorFuturo" />
+          <EntitySet Name="Tienda" EntityType="Self.Tienda" />
+          <EntitySet Name="TiendaCliente" EntityType="Self.TiendaCliente" />
+          <AssociationSet Name="AnualidadCronogramaPagos_Cliente" Association="Self.AnualidadCronogramaPagos_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="AnualidadCronogramaPagos" EntitySet="AnualidadCronogramaPagos" />
+          </AssociationSet>
+          <AssociationSet Name="AnualidadCronogramaPagos_Credito" Association="Self.AnualidadCronogramaPagos_Credito">
+            <End Role="Creditos" EntitySet="Creditos" />
+            <End Role="AnualidadCronogramaPagos" EntitySet="AnualidadCronogramaPagos" />
+          </AssociationSet>
+          <AssociationSet Name="Credito_Cliente" Association="Self.Credito_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Creditos" EntitySet="Creditos" />
+          </AssociationSet>
+          <AssociationSet Name="Tienda_Cliente_Cliente" Association="Self.Tienda_Cliente_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="TiendaCliente" EntitySet="TiendaCliente" />
+          </AssociationSet>
+          <AssociationSet Name="Credito_Tienda" Association="Self.Credito_Tienda">
+            <End Role="Tienda" EntitySet="Tienda" />
+            <End Role="Creditos" EntitySet="Creditos" />
+          </AssociationSet>
+          <AssociationSet Name="ValorFuturo_Credito" Association="Self.ValorFuturo_Credito">
+            <End Role="Creditos" EntitySet="Creditos" />
+            <End Role="CreditoValorFuturo" EntitySet="CreditoValorFuturo" />
+          </AssociationSet>
+          <AssociationSet Name="Tienda_Cliente_Tienda" Association="Self.Tienda_Cliente_Tienda">
+            <End Role="Tienda" EntitySet="Tienda" />
+            <End Role="TiendaCliente" EntitySet="TiendaCliente" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TF_Finanzas_Ingenieria_Economica_Grupo5ModelStoreContainer" CdmEntityContainer="BDEFEntities">
+          <EntitySetMapping Name="AnualidadCronogramaPagos">
+            <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.AnualidadCronogramaPagos">
+              <MappingFragment StoreEntitySet="AnualidadCronogramaPagos">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+                <ScalarProperty Name="Credito_ID" ColumnName="Credito_ID" />
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="Cuota" ColumnName="Cuota" />
+                <ScalarProperty Name="EstadoPago" ColumnName="EstadoPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="NombresCompletos" ColumnName="NombresCompletos" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+                <ScalarProperty Name="DiaPagoConfigurable" ColumnName="DiaPagoConfigurable" />
+                <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+                <ScalarProperty Name="EstadoCliente" ColumnName="EstadoCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Creditos">
+            <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Creditos">
+              <MappingFragment StoreEntitySet="Creditos">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+                <ScalarProperty Name="Tienda_ID" ColumnName="Tienda_ID" />
+                <ScalarProperty Name="TipoCredito" ColumnName="TipoCredito" />
+                <ScalarProperty Name="MontoCredito" ColumnName="MontoCredito" />
+                <ScalarProperty Name="Plazo" ColumnName="Plazo" />
+                <ScalarProperty Name="TEA" ColumnName="TEA" />
+                <ScalarProperty Name="TasaMora" ColumnName="TasaMora" />
+                <ScalarProperty Name="FechaCompra" ColumnName="FechaCompra" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="PagoFinal" ColumnName="PagoFinal" />
+                <ScalarProperty Name="Interes" ColumnName="Interes" />
+                <ScalarProperty Name="TipoGracia" ColumnName="TipoGracia" />
+                <ScalarProperty Name="DiasGracia" ColumnName="DiasGracia" />
+                <ScalarProperty Name="EstadoPago" ColumnName="EstadoPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CreditoValorFuturo">
+            <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.CreditoValorFuturo">
+              <MappingFragment StoreEntitySet="CreditoValorFuturo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Credito_ID" ColumnName="Credito_ID" />
+                <ScalarProperty Name="ValorFuturo" ColumnName="ValorFuturo" />
+                <ScalarProperty Name="FechaPago" ColumnName="FechaPago" />
+                <ScalarProperty Name="EstadoPago" ColumnName="EstadoPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tienda">
+            <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.Tienda">
+              <MappingFragment StoreEntitySet="Tienda">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiendaCliente">
+            <EntityTypeMapping TypeName="TF_Finanzas_Ingenieria_Economica_Grupo5Model.TiendaCliente">
+              <MappingFragment StoreEntitySet="TiendaCliente">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+                <ScalarProperty Name="Tienda_ID" ColumnName="Tienda_ID" />
+                <ScalarProperty Name="NombresCliente" ColumnName="NombresCliente" />
+                <ScalarProperty Name="EstadoCliente" ColumnName="EstadoCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
